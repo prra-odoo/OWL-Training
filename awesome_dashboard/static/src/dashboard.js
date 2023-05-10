@@ -3,9 +3,8 @@
 import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
 
-class AwesomeDashboard extends Component {}
+class AwesomeDashboard extends Component {
+    static template = "awesome_dashboard.clientaction";
+}
 
-AwesomeDashboard.components = {};
-AwesomeDashboard.template = "awesome_tshirt.clientaction";
-
-registry.category("actions").add("awesome_tshirt.dashboard", AwesomeDashboard);
+registry.category("actions").add("awesome_dashboard.dashboard", AwesomeDashboard);

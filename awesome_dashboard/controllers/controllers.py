@@ -8,36 +8,28 @@ from odoo.http import request
 
 logger = logging.getLogger(__name__)
 
-
-class AwesomeTshirt(http.Controller):
-    @http.route(['/awesome_tshirt/order'], type='http', auth='public')
-    def make_order(self):
-        """
-        Renders the public page to make orders
-        """
-        return request.render('awesome_tshirt.order_public_page')
-
-    @http.route(['/awesome_tshirt/validate_order'], type='http', auth="public", methods=['POST'], website=True)
-    def validate_order(self, name, email, address, quantity, size, url):
-        """
-        Creates an order (and optionnaly a partner) with the given data
-        """
-        Partner = request.env['res.partner'].sudo()
-        customer = Partner.search([('email', '=', email)], limit=1)
-        if not customer:
-            customer = Partner.create({
-                'street': address,
-                'email': email,
-                'name': name,
-            })
-        request.env['awesome_tshirt.order'].create({
-            'customer_id': customer.id,
-            'quantity': quantity,
-            'size': size,
-            'image_url': url,
-        })
-        return request.render('awesome_tshirt.thank_you')
-
+class AwesomeDashboard(http.Controller):
     @http.route('/awesome_tshirt/statistics', type='json', auth='user')
     def get_statistics(self):
-        return http.request.env['awesome_tshirt.order'].get_statistics()
+        """
+        Returns a dict of statistics about the orders:
+            'average_quantity': the average number of t-shirts by order
+            'average_time': the average time (in hours) elapsed between the
+                moment an order is created, and the moment is it sent
+            'nb_cancelled_orders': the number of cancelled orders, this month
+            'nb_new_orders': the number of new orders, this month
+            'total_amount': the total amount of orders, this month
+        """
+
+        return {
+            'average_quantity': (random.random() * 123) + 4,
+            'average_time': (random.random() * 44) + 4,  # simulate a delay between 4 and 48 hours
+            'nb_cancelled_orders': random.random() * 10,
+            'nb_new_orders': random.random() * 100,
+            'orders_by_size': {
+                'm': random.random() * 10,
+                's': random.random() * 10,
+                'xl': random.random() * 10,
+            },
+            'total_amount': random.random() * 1000,
+        }
