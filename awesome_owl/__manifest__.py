@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "owl_playground",
+    'name': "Awesome Owl",
 
     'summary': """
         Play with Owl in this playground module""",
@@ -26,7 +26,7 @@
         'views/templates.xml',
     ],
     'assets': {
-        'owl_playground.assets_playground': [
+        'awesome_owl.assets_playground': [
             # bootstrap
             ('include', 'web._assets_helpers'),
             'web/static/src/scss/pre_variables.scss',
@@ -44,7 +44,8 @@
             'web/static/src/core/browser/browser.js',
             'web/static/src/core/registry.js',
             'web/static/src/core/assets.js',
-            'owl_playground/static/src/**/*',
+            'awesome_owl/static/src/**/*',
         ],
-    }
+    },
+    'license': 'AGPL-3'
 }

@@ -7,6 +7,8 @@
     """,
 
     'version': '0.1',
+    'application': True,
+    'installable': True,
     'depends': ['web'],
     'data': [],
     'assets': {
