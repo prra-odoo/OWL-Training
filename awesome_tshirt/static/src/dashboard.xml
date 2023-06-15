@@ -1,8 +1,32 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
+         <div class="o_dashboard_bg vh-100">
+            <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+                <t t-set-slot="control-panel-bottom-left">
+                    <button t-on-click="customer" class="btn btn-primary">CUSTOMERS</button>
+                    <button t-on-click="newOrder" class="btn btn-primary">NEW ORDERS</button>
+                    <button t-on-click="cancelOrder" class="btn btn-primary">CANCELLED ORDERS</button>
+                </t>
+                <div class="d-flex flex-wrap">
+                    <t t-foreach="data" t-as="key" t-key="key">
+                        <Card>
+                        <t t-set-slot="title"><t t-esc="data[key]"/></t>
+                        <t t-set-slot="content"><t t-esc="val[key]"/></t>
+                        </Card>
+                    </t>
 
+                    <div class="col-4 mx-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Shirt Order By Size</h5>
+                                <canvas t-ref="canvas"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Layout>
+        </div>      
     </t>
-
 </templates>

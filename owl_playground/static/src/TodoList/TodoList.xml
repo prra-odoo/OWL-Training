@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template xml:space="preserve">
+
+    <t t-name="owl_playground.TodoList" owl="1">
+        
+        <input type="text" t-ref="InputTodo" class="mx-auto w-50 form-control" placeholder="Enter a new task" t-on-keyup="ev => this.addTodo(ev)" />
+        <div class="w-50 mx-auto text-wrap text-start mt-2">
+            <t t-foreach="todos" t-as="todo" t-key="todo.id">
+                    <Todo id="todo.id" description="todo.description" done="todo.done" toggleState.bind="toggleState" removeTodo.bind="removeTodo"/>
+            </t>
+        </div>
+    </t>
+
+</template>
