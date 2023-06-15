@@ -1,8 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-
     <t t-name="awesome_tshirt.clientaction" owl="1">
-
-    </t>
-
+        
+            <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }"> 
+                <t t-set-slot="control-panel-bottom-left">
+                    <button t-on-click="customer" type="button" class="btn btn-primary" title="Customers">CUSTOMERS</button>
+                    <button t-on-click="openNewOrders" type="button" class="btn btn-primary" title="New Orders">NEW ORDERS</button>
+                    <button t-on-click="openCancelOrders" type="button" class="btn btn-primary" title="Canceled Orders">CANCELED ORDERS</button>
+                </t>
+                <div class="r_awesome_tshirt_dasboard">
+                    <div class="d-flex">
+                        <div t-foreach="data" t-as="key" t-key="key">
+                            <Card>
+                                <t t-set-slot="title"><t t-esc="data[key]"/></t>
+                                <t t-set-slot="content"><t t-esc="stats[key]"/></t>
+                            </Card>
+                        </div>
+                    </div>
+                        <div class="card mx-2 mt-2 col-4" t-att-class="h-100" t-ref="root">
+                            <div class="card-body">
+                            <h5> shirt order by size</h5>  
+                            <canvas t-ref="canvas"/>
+                            </div>
+                        </div> 
+                </div>
+             </Layout>
+    </t>     
+    <!-- <t t-name="awesome_tshirt.piechart" owl="1">
+        <div t-att-class="h-100" t-ref="root">
+            <div class="h-100 position-relative" t-ref="container">
+                <canvas t-ref="canvas"></canvas>
+            </div>
+        </div>
+    </t>      -->
 </templates>
+
+ 

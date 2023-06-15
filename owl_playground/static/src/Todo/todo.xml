@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-name="owl_playground.todo" owl="1">
+    <div class="d-flex row-gap-2">
+        <span>
+        <input type="checkbox" t-on-click="event => props.toggleState(props.id)"></input> 
+                    <!-- <p
+                    t-att-class="{'text-muted':props.todo.done,'text-decoration-line-through':props.todo.done}"> -->
+            <span  class="ms-2" t-att-class=" props.done ? 'text-decoration-line-through text-muted' : 'text-success' ">
+            <t t-esc="props.id"/>.<t t-esc="props.description"/>      
+            <span class="fa fa-remove text-danger ms-2" t-on-click="event => props.removeTodo(props.id)"></span>
+             </span>
+        </span>
+    </div>
+    </t>
+</template>
+<!-- CONDITION ? TRUE : FALSE -->
