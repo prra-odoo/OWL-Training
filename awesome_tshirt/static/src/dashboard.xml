@@ -2,7 +2,37 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
+        <div>
+            <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }"> 
+            <t t-set-slot="control-panel-bottom-left">
+            <button type="button" class="btn btn-success" t-on-click="customer" >CUSTOMERS</button>
+            <button type="button" class="btn btn-success" t-on-click="newOrder" >NEW ORDERS</button>
+            <button type="button" class="btn btn-success" t-on-click="cancelOrder" >CANCELLED ORDERS</button>
+            </t>
 
+            </Layout>
+        </div>
+
+         <t t-call="awesome_tshirt.clientaction.statistics"/>
     </t>
+
+    <t t-name="awesome_tshirt.clientaction.statistics" owl="1">
+    <div class="custom_color_dashboard">
+    <div class="d-flex flex-nowrap">
+        <div t-foreach="orderDetails" t-as="key" t-key="key" class="m-2">
+            <Card>
+                <t t-set-slot="title"><t t-esc="orderDetails[key]"/></t>
+                <p class="card-text"><t t-esc="statistics[key]"/></p>
+            </Card>   
+        </div>      
+    </div>
+
+    <div class="card mx-3 mt-2 col-4">
+            <div class="card-body">
+            <canvas t-ref="canvas"></canvas>        
+            </div>
+    </div>
+    </div>
+</t>
 
 </templates>
