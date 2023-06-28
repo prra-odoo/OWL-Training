@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<templates xml:space="preserve">
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
 
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
-        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="col-6">
+                        <Counter/>
+                        <p class="fw-bold mt-3">Hello World ! \n Click's Me!!</p>
+                        
+                    </div>
+                </div>
+
+            <Card>
+                <!-- <t t-set-slot="title">My Card</t> -->
+                <t t-set-slot="content">Some quick example text...</t>
+            </Card>
+
+
+                <div class="col-md-4 ">
+                    <div>
+                        <div class="mb-2">
+                        <TodoList />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        
     </t>
 
-</templates>
+</template>

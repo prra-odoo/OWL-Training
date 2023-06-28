@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-name="owl_playground.todolist" owl="1">
+    <div>
+
+   
+    <!-- <input id="todo_input" type="text" t-on-keypress="ev => this.addTodo(ev)"
+                class="form-control" placeholder="Add a todo"/>
+
+ -->
+ <div>
+                <input class="form-control" t-ref="Input" type="text" t-on-keyup="ev => this.addTodo(ev)"
+                 placeholder="Add a todo"/>
+ </div>
+
+                     <t t-foreach="todos" t-as="item" t-key="item.id">
+                <Todo id="item.id" description="item.description" done="item.done" toggleState.bind="toggleState" removeTodo.bind="removeTodo" />
+
+
+
+            </t>
+
+ 
+
+    </div>
+    </t>
+</template>

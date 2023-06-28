@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+
+    <t t-name="owl_playground.Card" owl="1">
+    <div class="col-md-4">
+
+      <div class="card">
+        
+        <div class="card-body">
+        <t t-if="props.slots.title">
+            <h5><t t-slot="title">
+            </t></h5>
+            <p><t t-slot="content"></t></p>
+        </t>
+        <t t-else="props.slots.default"><h3>My Card!!! </h3>
+        <t t-slot="default">
+        </t>
+        </t> 
+        </div>
+      </div>
+    </div>
+</t>
+</template>
