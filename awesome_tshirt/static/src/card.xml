@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+   <t t-name="awesome_tshirt.Card" owl="1">
+        <div class="card p-3" style="width: 18rem;">
+                <h5>
+                    <t t-slot="title">
+                        <!-- <div class="card-title ">Card title</div> -->
+                    </t>
+                </h5>
+                <p class="card-text">
+                    <t t-slot="data"/>
+                </p>
+        </div>
+   </t>
+</templates>

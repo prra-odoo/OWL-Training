@@ -2,7 +2,39 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
-
+    <Layout display="{controlPanel: {'top-right':false,'bottom-right':false}}">
+    <t t-set-slot="control-panel-bottom-left">
+        <button class="btn btn-primary" t-on-click="openCustomer">
+        Customers
+        </button>
+        <button class="btn btn-primary" t-on-click="newOrders">
+        New Orders
+        </button>
+         <button class="btn btn-primary" t-on-click="cancelledOrders">
+        Cancelled Orders
+        </button>
+    </t>
+    <div class="awesome_content vh-100">
+        <div class="d-flex">
+            <div class="m-3" t-foreach="this.datas" t-as="data" t-key="data">
+                <t t-if="data != 'orders_by_size'">
+                <Card>
+                    
+                <t t-set-slot='title'>
+                <t t-esc="description[data]"/>
+                </t>
+                <t t-set-slot='data'>
+                <t t-esc="datas[data]"/>
+                </t>
+                </Card>
+                </t>
+            </div>
+        </div>
+    <!-- <Card> -->
+    <PieChart pltdata="datas['orders_by_size']" openOrd.bind="openOrders"/>
+    <!-- </Card> -->
+    </div>
+    </Layout>
     </t>
 
 </templates>

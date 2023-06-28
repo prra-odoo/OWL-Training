@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+   <t t-name="owl_playground.Todo" owl="1">
+   <!-- <div class="d-flex border border-dark ">
+     <div class = 'border d-flex justify-content-between mt-3' t-att-class="{'text-muted': props.todo.done, 'text-decoration-line-through': props.todo.done}">
+          <div class='border align-self-baseline'>
+          <input type="checkbox" class="form-check-input mx-2" t-on-click="() => props.togglestate(props.todo.id)"/>
+          <span class="mx-2"><t t-esc="props.todo.id"/>.</span>
+          <span><t t-esc="props.todo.description"/></span>
+          </div>
+      </div>
+      <div class="border">
+      </div>
+   </div> -->
+   <div class="d-flex align-items-center m-3">
+      <input type="checkbox" class="form-check-input mx-2" t-on-click="() => props.togglestate(props.todo.id)"/>
+      <div t-att-class="{'text-muted': props.todo.done, 'text-decoration-line-through': props.todo.done}">
+         <span class="mx-2"><t t-esc="props.todo.id"/>.</span>
+         <span><t t-esc="props.todo.description"/></span>
+      </div>
+      <div>
+         <span class="fa fa-remove mx-5" t-on-click="() => props.removeTodo(props.todo.id)"/>
+      </div>
+   </div>
+   </t>
+</templates>

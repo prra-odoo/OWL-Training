@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+   <t t-name="owl_playground.Counter" owl="1">
+      <div class="w-auto">
+      <p >Counter: <t t-esc="state.value"/></p>
+      <button class="btn btn-primary" t-on-click="increment">Increment</button>
+      <br/>
+      <button class="btn btn-secondary" t-on-click="reset">Reset</button>
+      </div>
+   </t>
+</templates>

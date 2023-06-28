@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+   <t t-name="awesome_tshirt.Pie" owl="1">
+        <div class="card p-3 w-50 my-4" >
+                <canvas t-ref="canvas" t-on-click="clkl"/>
+        </div>
+   </t>
+</templates>
