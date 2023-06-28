@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <templates xml:space="preserve">
 
-    <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
+    <t t-name="owl_playground.Playground" owl="1">
+        <div class="container">
+            <div class="p-3 d-flex d-flex justify-content-between">
+                <Counter/>
+                <div>
+                    <Card>
+                        <t t-set-slot="title">Hello</t>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis deserunt nesciunt at minima consequatur voluptatem!</p>
+                        <a href="#" class="btn btn-secondary">Button</a>
+                    </Card>
+                </div>
+                <Todolist/>
+            </div>
         </div>
     </t>
 
