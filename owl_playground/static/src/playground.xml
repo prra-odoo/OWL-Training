@@ -2,8 +2,30 @@
 <templates xml:space="preserve">
 
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
+
+        <div class="container">
+
+            <br/>
+
+            <!-- Counter  -->
+            <div>
+                <!-- <Counter increment.bind="increment"/> -->
+                <Counter/>
+            </div>
+            <br/>
+
+            <!-- Card -->
+            <Card>
+                <t t-set-slot="title">My card</t>
+                Some quick example text...
+                                <!-- <Todo/> -->
+            </Card>
+            <br/>
+
+            <!-- TodoList -->
+            <div>
+                <TodoList/>
+            </div>
         </div>
     </t>
 

@@ -3,6 +3,39 @@
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
 
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <button class="btn btn-primary" t-on-click="customerView"> Customers </button>
+                <button class="btn btn-warning" t-on-click="last7DaysOrders"> New Orders </button>
+                <button class="btn btn-danger" t-on-click="last7DaysCancelledOrders"> Cancelled Orders </button>
+            </t>
+        </Layout>
+        <t t-call="awesome_tshirt.clientaction.statistics"/>
+
+        <div class="o_graph_canvas_container w-50 mx-auto fs-1">
+            <canvas t-ref="canvas"/>
+        </div>
+
+    </t>
+
+    <t t-name="awesome_tshirt.clientaction.statistics" owl="1">
+        <div class="r_awesome_tshirt_dasboard">
+
+            <div class="d-flex">
+
+                <div t-foreach="keyToString" t-as="key" t-key="key" class="m-2">
+                    <Card>
+                        <t t-set-slot="title">
+                            <t t-esc="keyToString[key]"/>
+                            <!-- <t t-esc="keyToString"/> -->
+                        </t>
+                        <p class="card-text">
+                            <t t-esc="stats[key]"/>
+                        </p>
+                    </Card>
+                </div>
+            </div>
+        </div>
     </t>
 
 </templates>
