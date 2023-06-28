@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+<t t-name="awesome_tshirt.Card" owl="1">
+    <!-- <div class="col-md-3"> -->
+      <div class="card mx-2 mt-2">
+        <div class="card-body">
+        <t t-if="props.slots.title">
+            <h5><t t-slot="title">
+            </t></h5>
+            <p><t t-slot="content"></t></p>
+            
+        </t>
+        </div>
+      </div>
+    <!-- </div> -->
+</t>
+</template>
