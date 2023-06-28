@@ -2,7 +2,36 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
-
+        <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+            <t t-set-slot="control-panel-bottom-left">
+                <button class="btn btn-primary" t-on-click="openCustomers">CUSTOMERS</button>
+                <button class="btn btn-success" t-on-click="openLast7DaysOrders">NEW ORDERS</button>
+                <button class="btn btn-danger" t-on-click="openLast7DaysCancelledOrders">CANCELLED ORDER</button>
+            </t>
+            <div class="dashboard_style">
+                <div class="d-flex flex-nowrap">
+                    <div t-foreach="keyToString" t-as="key" t-key="key" class="m-2">
+                        <Card>
+                            <t t-set-slot="title">
+                                <t t-esc="keyToString[key]"/>
+                            </t>
+                            <p class="card-text">
+                                <t t-esc="result[key]"/>
+                            </p>
+                        </Card>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <Card className="'w-25'">
+                        <div class="card-body">
+                            <t t-set-slot="title">Shirt orders by size</t>
+                            <canvas t-ref="canvas"></canvas>
+                        </div>
+                    </Card>
+                </div>
+            </div>
+        </Layout>
     </t>
+
 
 </templates>
