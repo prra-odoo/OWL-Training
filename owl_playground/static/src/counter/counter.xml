@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.counter" owl="1">
+        <div class="py-5">
+            <div class="fw-bold py-1 text-center">
+                <p><t t-esc="state.value"/></p>
+                <button t-on-click="increment" class="btn btn-primary">
+                    Count++
+                </button>
+            </div>
+            <div class="pt-2 lead text-center">
+                <t t-if="state.value &gt; 0 &amp; state.value &lt; 6">
+                    <p>Once More Once More......</p>
+                </t>
+                <t t-elif="state.value &gt; 5 &amp; state.value &lt; 11">
+                    <p>Are Bandh kar, Bandh Kar......</p>
+                </t>
+                <t t-elif="state.value &gt; 10">
+                    <p>Aeeee bas karne Vaidi......</p>
+                </t>
+            </div>
+        </div>
+    </t>
+
+
+</templates>

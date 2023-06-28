@@ -1,10 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
+        <div class="row">
+            <div class="col-2 border">
+                <Counter/>
+            </div>
+            <div class="col-8 border">
+                <TodoList/>
+            </div>
+            <div class="col-2 text-center py-5">
+                <Card>
+                    <t t-set-slot="image">
+                        <img src="https://play-lh.googleusercontent.com/HUuQc4Zpl6x7fUyX-jFMmcuUbW77REw4UKl5rfhHfP4VY6ctBU1w1I_RZWsXaojFgIo" class="card-img-top" alt="..." />
+                    </t>
+                    <t t-set-slot="title">Title hai ye</t>
+                    <t t-set-slot="content">
+                        Bahot Sara Content...
+                    </t>
+                    <a href="#" class="btn btn-primary">Default</a>
+                </Card>
+            </div>
         </div>
     </t>
+
 
 </templates>
