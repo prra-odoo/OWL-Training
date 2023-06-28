@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.Counter" owl="1">
+        <p>
+            <strong> Guess a number between 1 and 10 and Having <t t-esc="state.chances"/> chances:</strong>
+        </p>
+        <input type="number" t-model="state.guess"/>
+        <button class="btn btn-primary m-1" t-on-click="makeGuess">Guess</button>
+        <br></br>
+        <p><strong> Counter:    <t t-esc="state.value"/></strong>
+        </p>
+        <button class="btn btn-primary m-2" t-on-click="increment">Increment</button>
+        <button class="btn btn-primary m-2" t-on-click="decrement">Decrement</button>
+    </t>
+</templates>

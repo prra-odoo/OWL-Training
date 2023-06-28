@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
+        <div class="p-3 row">
+            <div class="col border border-dark ">
+                <strong>Hello world 😃</strong>
+                <Counter/>
+            </div>
+            <div class="col border border-dark">
+                <Card>
+                    <t t-set-slot="title">My Card</t>
+                Some quick example text
+            </Card>
+            </div>
+            <div class="col border border-dark ">
+                <h2>TodoList</h2>
+                <TodoList/>
+            </div><!-- <t t-foreach="todolist" t-as="todo" t-key="todo.id">
+                <Todo id="todo.id" description="todo.description" done="todo.done"/>
+            </t> -->
         </div>
     </t>
-
 </templates>
