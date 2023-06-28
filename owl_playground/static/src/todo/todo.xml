@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.todo" owl="1">
+        <div t-att-class = "props.done ? 'text-muted text-decoration-line-through': ''" >
+            <input type="checkbox" t-on-click="ev => props.toggleState(props.id)" style="margin: 5px"/>
+            <t t-esc = "props.id" /> <t t-esc = "props.description" />
+            <span class="fa fa-remove text-danger" t-on-click="ev => props.remove(props.id)" style="margin: 10px"/>
+        </div>
+    </t>
+
+</templates>

@@ -3,7 +3,12 @@
 
     <t t-name="owl_playground.playground" owl="1">
         <div class="p-3">
-            hello world
+            <Counter/>
+            <Card>
+                <t t-set-slot="title">My Card</t>
+                <p class="card-text">Some quick example text...</p>
+            </Card>
+            <TodoList/>
         </div>
     </t>
 
