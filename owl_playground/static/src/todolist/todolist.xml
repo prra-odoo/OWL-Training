@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.todolist" owl="1">
+        <Card>
+            <t t-set-slot="title">TodoList : </t>
+                <input type="text" class="form-control " id="inlineFormInputName" placeholder="Add Todo" t-on-keyup="addtodo" t-ref="input"/>
+                <ul class="list-group mb-0">
+                    <t t-foreach="todolist" t-as="todo" t-key="todo.id">
+                        <li class="list-group-item border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
+                            <Todo id="todo.id" desc="todo.description" done="todo.done" togglestate.bind="toggle" removetodo.bind="todoremove" />
+                        </li>
+                    </t>
+                </ul>
+        </Card>
+    </t>
+</templates>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.counter" owl="1">
+        <Card>
+            <t t-set-slot="title">Counter : <t t-esc="state.value"/></t>
+            <button class="btn btn-outline-primary" t-on-click="increment">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-outline-danger mx-2" t-on-click="decrement">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </button>
+            <div>
+                <button class="btn btn-outline-warning mt-2" t-on-click="() => this.state.value = 0">Reset counter</button>
+            </div>
+        </Card>
+    </t>
+</templates>

@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-
     <t t-name="awesome_tshirt.clientaction" owl="1">
+        <div class="h-100 dashboard">
+            <Layout display = "{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+                <t t-set-slot="control-panel-bottom-left">
+                    <button t-on-click="openCustomer" class="btn btn-primary" title="Customers">Customers</button>
+                    <button t-on-click="newOrders" class="btn btn-primary" title="New Orders">New Orders</button>
+                    <button t-on-click="cancelOrders" class="btn btn-primary" title="Cancelled Order">Cancelled Order</button>
+                </t>
+            </Layout>
+            <div class="d-flex flex-nowrap mt-2">
+                <div t-foreach="keyvalue" t-as="key" t-key="key">
+                    <Card>
+                        <t t-set-slot="title">
+                            <t t-esc="keyvalue[key]"/>
+                        </t>
+                        <t t-esc="statistics[key]"/>
+                    </Card>
+                </div>
+            </div>
 
+            <div class="mt-2">
+                <Card className="'w-25'">
+                    <t t-set-slot="title">Shirt orders by size</t>
+                    <Piechart data="statistics['orders_by_size']" sizeby.bind="openSizeOrders"/>
+                </Card>
+            </div>
+        </div>
     </t>
-
 </templates>
