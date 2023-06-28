@@ -2,7 +2,25 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
-
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <button class="btn btn-primary" t-on-click="opencustomers">Customers</button>
+                <button class="btn btn-primary" t-on-click="neworder">New Orders</button>
+                <button class="btn btn-primary" t-on-click="cancleorder">Cancelled Orders</button>
+            </t>
+        </Layout>
+        <div class="bg-body h-100">
+            <t t-foreach="statistics" t-as="key" t-key="key">
+                <Card >
+                    <t t-set-slot="title" t-esc="statistics[key]"/>
+                    <t t-esc="output[key]"/>
+                </Card>
+            </t>
+            <Card className="'w-25'">
+                <t t-set-slot="title">Shirt orders by size</t>
+                <PieChart data="output['orders_by_size']" listviewsize.bind="sizeview"/>
+            </Card>
+        </div>
     </t>
 
 </templates>
