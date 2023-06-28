@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.Listtodo" owl="1">
+     <div class="card-body">
+       <input type="text"   class="rounded-pill" placeholder="Add a todo" t-on-keypress="ev => this.addTodo(ev)"  t-ref="todoListInput"></input>
+        <t t-foreach="list_todo" t-as="todo" t-key="todo.id">
+          <Todo id="todo.id"  description="todo.description" done="todo.done"  togglestate.bind="toogle" removeTodo.bind="removeTodo" />
+        </t>
+     </div>
+
+
+      </t>
+</templates>

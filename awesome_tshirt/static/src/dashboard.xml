@@ -1,8 +1,40 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
+    <div class="h-100 dashboard">
+         <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+        <t t-set-slot="control-panel-bottom-left">
+            <button type="button" class="btn btn-primary" t-on-click="Customer">Customer</button>
+            <button type="button" class="btn btn-primary" t-on-click="NewOrders">New Orders</button>
+            <button type="button" class="btn btn-primary" t-on-click="cancelOrders">Cancel Orders</button>
 
+        </t>
+    </Layout>
+    <div class="row gx-3 mt-3 ">
+        <t t-foreach="statistics" t-key="data" t-as="data">
+            <div class="col">
+            <Card>
+                <t t-set-slot="title" t-esc="statistics[data]"/>
+                <t t-if="data == 'orders_by_size'">
+                    <t t-foreach="result.orders_by_size" t-key="subdata" t-as="subdata">
+                        Size <t t-esc="subdata"></t>: 
+                        <t t-esc="result.orders_by_size[subdata]"/>
+                        <br/>
+                    </t>
+                </t>
+                <t t-else="" t-esc="result[data]"/>
+            </Card>
+            </div>
+        </t>
+
+    </div>
+    <div style="height:100px">
+     <Card>
+    <PieChart data="result['orders_by_size']" sizeby.bind="openSizeOrders"/>
+     </Card>
+    </div>
+    </div>
     </t>
 
 </templates>

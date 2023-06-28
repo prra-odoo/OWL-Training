@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
-        </div>
-    </t>
+    <div style="border:3px solid #fff;padding: 20px;">
+          <div style="width: 25%;float: left;padding: 20px;border: 2px white;">
+                <Counter/>
+          </div>
+          <Card>
+                <t t-set-slot="title">My card</t>
+            </Card>
+          <div style="width: 50%;float: left;padding: 20px;border: 2px white ;">
+                <Listtodo/>
+          </div>
 
+    </div>
+      </t>
 </templates>

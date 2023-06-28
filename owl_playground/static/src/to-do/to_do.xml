@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.todo" owl="1">
+        <!-- <div class="p-3">
+            <div >
+            <input type="checkbox" t-on-click="ev => props.togglestate(props.id)" /> 
+             <div t-att-class="props.done ? 'text-decoration-line-through':'' ">
+                <t t-esc="props.id" /><t t-esc="props.description" />
+            <span role="button" class="fa fa-remove ms-3 text-danger" t-on-click="ev => props.removeTodo(props.id)"/>
+            </div>
+            </div>
+        </div> -->
+
+         <div class="card-body">
+          <div class="card-title">
+           <ul class="list-group list-group-flush">
+           <li class="list-group-item" style="border: 1px solid black;">
+            <div t-att-class="props.done ? 'text-decoration-line-through':'' ">
+            <input type="checkbox" t-on-click="ev => props.togglestate(props.id)" style="margin-right: 54px;" /> 
+                 <t t-esc="props.id" /><t t-esc="props.description" />
+            <span role="button" class="fa fa-remove ms-3 text-danger" t-on-click="ev => props.removeTodo(props.id)"/>
+            </div>
+           </li>
+           </ul>
+          </div>
+         </div>
+    </t>
+
+</templates>

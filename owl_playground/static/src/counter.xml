@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.counter" owl="1">
+    <!-- <div style="text-align: left;margin-top: 30px ;">
+      <p>Counter: <t t-esc="state.value"/></p>
+      <button class="btn btn-primary"  style ="width: 130px" t-on-click="increment" >Increment</button>
+      <button class="btn btn-primary"  style ="margin-left: 10px ; width: 130px" t-on-click="decrement">decrement</button>
+    </div> -->
+
+
+       <div class="card-body">
+       <p>Counter: <t t-esc="state.value"/></p>
+      <button class="btn btn-primary" t-on-click="increment" >Increment</button>
+      <button class="btn btn-primary" t-on-click="decrement">decrement</button>
+       </div> 
+      </t>
+</templates>

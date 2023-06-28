@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+
+    <t t-name="awesome_tshirt.PieChart" owl="1">
+    <div>
+        <canvas t-ref="canvas" t-on-click="onpiechartclick"
+ />
+    </div>
+    </t>
+
+</templates>
