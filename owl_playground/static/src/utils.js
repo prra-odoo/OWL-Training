@@ -1,4 +1,4 @@
-/**  @odoo-module **/
+/** @odoo-module **/
 
 import { onMounted, useRef } from "@odoo/owl";
 
