@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-
     <t t-name="owl_playground.playground" owl="1">
         <div class="p-3">
-            hello world
+              hello world
+              <Counter/>
+              <TodoList/>
+              <Card>
+              <t t-set-slot="title">Card</t>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                  of the card's content.</p>
+              </Card>
+              <!-- <Card/> -->
         </div>
     </t>
-
 </templates>
