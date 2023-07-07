@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-name="owl_playground.addContact" owl="1">
+        <ContactForm addlist.bind="addList"/>
+        <t t-foreach="contacts" t-as="list" t-key="list.id">
+            <ContactList t-props="list" remove_list.bind="remove_list" upd_list.bind="upd_list"/>
+        </t>
+    </t>
+
+</templates>

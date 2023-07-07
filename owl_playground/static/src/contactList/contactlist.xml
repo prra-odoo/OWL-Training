@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-name="owl_playground.contactlist" owl="1">
+        <div class="item">
+            <div class="content p-3 m-2 rounded border">
+                <i class="fa fa-trash p-2 fa-3x cursor-pointer position-absolute end-0 m-2" t-on-click="()=> {props.remove_list(props.id)}"/>
+                <div class="header text-warning outline-none" t-ref="name"><t t-esc="props.name"/></div>
+                <div class="text-primary" id="email" t-ref="email"> <t t-esc="props.email"/> </div>
+                <button class="" id="updateCss_btn" t-on-click="update" t-ref="update_btn">update</button>
+                <i class="fa fa-pencil me-2 cursor-pointer p-2 text-info:hover" t-on-click="edit_field"/>
+            </div>
+        </div>
+    </t>
+</templates>

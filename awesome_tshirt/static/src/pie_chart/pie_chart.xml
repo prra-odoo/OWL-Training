@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_tshirt.pie_chart" owl="1">
+        <div class="h-50 w-50 border bg-white">
+            <canvas t-ref="chartCanvas" t-on-click="onChart"/>
+        </div>
+    </t>
+
+</templates>

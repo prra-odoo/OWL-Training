@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-
     <t t-name="awesome_tshirt.clientaction" owl="1">
+        <div class="h-100 o_awsome_parent">
+              <Layout display="display">
+              <t t-set-slot="control-panel-bottom-left">
+                <button class="btn btn-primary" t-on-click="openSettings">Customers</button>
+                <button class="btn btn-primary" t-on-click="orders">New Orders</button>
+                <button class="btn btn-primary" t-on-click="cancelled_order">Cancelled Orders</button>
+              </t>
 
+              <div class="d-flex m-2 o_awsome_tshirt">
+               <t t-foreach="statTitle" t-as="key" t-key="key">
+                  <Card>
+                      <t t-set-slot = "title">
+                            <t t-log="key"/>
+                          <t t-esc="statTitle[key]"/>
+                      </t>
+                          <t t-esc="result[key]"/>
+                  </Card>
+
+                </t>
+              </div>
+              <PieChart data="result['orders_by_size']" onChartClick.bind="openOrders"/>
+              </Layout>
+        </div>
     </t>
 
 </templates>

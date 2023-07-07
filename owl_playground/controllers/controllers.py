@@ -7,7 +7,4 @@ class OwlPlayground(http.Controller):
         """
         Renders the owl playground page
         """
-        return request.render('owl_playground.playground')
-
-
-
+        return request.render('owl_playground.Playground')

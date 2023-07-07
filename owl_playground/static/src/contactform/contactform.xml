@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-name="owl_playground.contactForm" owl="1">
+        <div class="text-center mt-5">
+            <h2>Add Contacts</h2>
+            <form>
+                <div class="field m-5">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Name" t-on-change="(ev)=>{this.name=ev.target.value}"/>
+                </div>
+                <div class="field m-5">
+                    <label>Email</label>
+                    <input type="text" name="name" placeholder="Email" t-on-change="(ev)=>{this.email=ev.target.value}"/>
+                </div>
+                <button t-on-click="submit_form">Add</button>
+            </form>
+        </div>
+    </t>
+
+</templates>
+ 
