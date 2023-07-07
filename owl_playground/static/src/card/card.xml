@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+  <t t-name="owl_playground.Card" owl="1">
+    <div class="card" style="width: 18rem;">
+      <!-- <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" /> -->
+      <div class="card-body">
+        <t t-slot="default"/>
+          <t t-slot = "title">Card title 2</t>
+            <h5 class="card-title">My Card</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk
+              of the card's content.
+              <t t-slot="default">ritik</t>
+            </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </t>
+</templates>

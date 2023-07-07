@@ -1,0 +1,111 @@
+.quote-generator-component {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #00ffd5, #0059ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: white;
+    height: 320px; /* Set a fixed height for the container */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.quote-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.4;
+}
+
+.quote-author {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #bbb;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.quote-category {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.generate-button,
+.color-button,
+.color2-button,
+.add-quote {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.generate-button {
+    background-color: #42b983;
+    color: white;
+    margin-right: 15px;
+}
+
+.generate-button:hover {
+    background-color: #32a673;
+}
+
+.color-button {
+    background-color: #fca311;
+    color: black;
+}
+
+.color-button:hover {
+    background-color: #f08905;
+}
+
+.color2-button {
+    background-color: violet;
+    color: black;
+    margin-right: 15px;
+}
+
+.color2-button:hover {
+    background-color: #c54df0;
+}
+
+.add-quote {
+    background-color: salmon;
+    color: black;
+}
+
+.add-quote:hover {
+    background-color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+    /* Quote Text */
+    .quote-text {
+        font-size: 36px;
+    }
+
+    .quote-author {
+        font-size: 20px;
+    }
+
+    .quote-category {
+        font-size: 16px;
+    }
+
+    .generate-button,
+    .color-button,
+    .color2-button,
+    .add-quote {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

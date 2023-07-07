@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template xml:space="preserve">
+    <t t-name="owl_playground.QuoteGenerator" owl="1">  
+        <div class="quote-generator-component">
+            <div class="quote-container">
+                <p class="quote-text" t-attf-style="color: {{ state.color }}; font-family: {{ state.font }};"> Quote: <t t-esc="state.randomQuotes.quote"/> </p>
+                <p class="quote-author" t-attf-style="color: {{ state.color }};"> Author: <t t-esc="state.randomQuotes.author"/> </p>
+            </div>
+            <div class="quote-details">
+                <p class="quote-category" t-attf-style="color: {{ state.color }};">Category: <t t-esc="state.randomQuotes.category"/> <span t-esc="state.category"/></p>
+            </div>
+            <div class="button-container">
+                <button class="generate-button" t-on-click="generateQuote">Generate New Quote</button>
+                <button class="color-button" t-on-click="changeColor">Change Color</button>
+                <button class="color2-button" t-on-click="changeFont">Change Font</button>
+                <button class="add-quote" t-on-click="addQuote">Add Quotes</button>
+            </div>
+        </div>
+    </t>
+</template>

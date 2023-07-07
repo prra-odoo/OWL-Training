@@ -1,9 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <templates xml:space="preserve">
 
-    <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
+   <t t-name="owl_playground.playground" owl="1">
+        <div class="p-3 d-flex justify-content-center" >
+            <!-- <Counter/>
+            <TodoList/>
+            <Card>
+                <t t-set-slot="title">Card title</t>
+                    <p class="card-text">Some quick example text...</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            </Card> -->
+            <QuoteGenerator/>
         </div>
     </t>
 
