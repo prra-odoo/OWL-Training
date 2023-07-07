@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.transactionlist" owl="1">
+            <center>
+                <div>
+                    <input type="text" placeholder="Enter the Description" t-ref="desc"/>
+                    <input type="number" t-on-keyup="newExpense" placeholder="Enter new expense" t-ref="input"/>
+                    <button type="button" class="btn btn-success" t-on-click="addIncome">Income</button>
+                    <button type="button" class="btn btn-danger" t-on-click="addExpense">Expense</button>
+                </div>
+                <div>
+                    <b>Transaction List:</b> 
+                </div>
+
+                Total : <t t-out="this.total"/>
+
+            </center>
+            <div class="d-flex justify-content-between"> 
+                    <div>
+                    <b> Expense list: </b>
+                    <t t-foreach="expenselist" t-as="expense" t-key="expense.id">
+                        <Expense id="expense.id" amount="expense.amount" desc="expense.desc"/>
+                    </t>
+                    </div>
+
+                    <div>
+                    <b> Income list: </b>
+                    <t t-foreach="incomelist" t-as="income" t-key="income.id">
+                        <Income id="income.id" amount="income.amount" desc="income.desc"/>
+                    </t>
+                    </div>
+            </div>
+    </t>
+</templates>

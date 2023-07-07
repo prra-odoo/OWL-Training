@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.expense" owl="1">
+            <div class="ms-3 text-danger">
+            <t t-esc="props.desc"/>
+            <t t-esc="props.amount"/>
+            </div>
+    </t>
+</templates>
