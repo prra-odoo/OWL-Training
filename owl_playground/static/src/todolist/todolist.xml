@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.Todolist" owl="1">
+        <input t-on-keyup="addTodo" id="input" placeholder="Enter a new task" type="text" t-ref="aktr"/>
+        <t t-foreach="todolist" t-as="todo" t-key="todo.id">
+            <Todo id="todo.id" description="todo.description" done="todo.done" myFun1.bind ="toggleState" myFun2.bind ="removeTodo"/>
+        </t>
+    </t>
+</templates>

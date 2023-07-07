@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.player" owl="1">
+        <div class="container p-3">
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <OddEven score="player1_score" myFunc1.bind ="updateScore" changeValue.bind ="changeValueOfplayer" ran_number="ran1.value" player_score="player1_score.value" player_choose="current_p1_choose.value" player_id="p1_id">
+                            <t t-set-slot="title">Player 1</t>
+                        </OddEven>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                    <div class="card-body">
+                        <OddEven score="player2_score" myFunc1.bind = "updateScore" changeValue.bind ="changeValueOfplayer" ran_number="ran1.value" player_score="player2_score.value" player_choose="current_p2_choose.value" player_id="p2_id">
+                            <t t-set-slot="title">Player 2</t>
+                        </OddEven>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </t>
+</templates>

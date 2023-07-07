@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.Todo" owl="1">
+        <t t-esc="abc"/>
+        <!-- <t t-esc="abc"/> -->
+        <p t-att-class="props.done ? 'text-decoration-line-through text-muted' : '' ">
+        <br/><input type="checkbox" t-att-checked="props.done" t-on-click="() => props.myFun1(props.id)"/>
+        <!-- <br/><input type="checkbox" t-att-checked="props.done"/> -->
+            <t t-esc="props.id"/>.
+            <t t-esc="props.description"/>
+            <span class="fa fa-remove" t-on-click="() => props.myFun2(props.id)"/>
+        </p>
+    </t>
+</templates>

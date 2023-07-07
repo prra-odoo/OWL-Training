@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_tshirt.card" owl="1">
+        <div t-attf-class="{{props.className}}">
+            <div class="card-body">
+                <t t-if="props.slots.title">
+                    <h5 class="card-title"><t t-slot="title"/></h5>
+                </t>
+                <t t-slot="default"/>
+            </div>
+        </div>
+    </t>
+</templates>

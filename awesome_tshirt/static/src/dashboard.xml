@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
 
-    <t t-name="awesome_tshirt.clientaction" owl="1">
-
+    <t t-name="awesome_tshirt.awesome_dashboard" owl="1">
+        <div>
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <button t-on-click="openSettings" >Customers</button>
+                <button t-on-click="newOrders" >New Orders</button>
+                <button t-on-click="cancelledOrders" >Cancelled Orders</button>
+            </t>
+        </Layout>
+        </div>
+        <div class="h-100 o_awesome_tshirt_dashboard">
+            <t t-foreach="cardtitle" t-as="key" t-key="key">
+                <t t-if="key === 'orders_by_size'">
+                    <Card className="'card1'">
+                        <t t-set-slot="title"><t t-esc="cardtitle[key]"/></t>
+                        <PieChart label="Object.keys(this.response.orders_by_size)" data="Object.values(this.response.orders_by_size)" openOrdersBySize.bind="openOrdersBySize"/>
+                    </Card>
+                </t>
+                <t t-else="">
+                    <Card className="'card'">
+                        <t t-set-slot = "title">
+                            <t t-esc="cardtitle[key]"/>
+                        </t>
+                        <t t-esc="response[key]"/>
+                    </Card>
+                </t>
+            </t>
+        </div>
     </t>
-
 </templates>

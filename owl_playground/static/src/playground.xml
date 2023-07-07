@@ -2,9 +2,22 @@
 <templates xml:space="preserve">
 
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
-        </div>
+            <!-- <div class="p-3">
+                hello world
+            </div>
+            <div class="p-3">
+                <Counter/>
+            </div>
+            <div class="p-3">
+                <Card >
+                    <t t-set-slot="title">AKSHAT</t>
+                    <p class="card-text">Some quick example text...</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </Card>
+            </div>
+            <div class="p-3">
+                <Todolist/>
+            </div> -->
+        <Player/>
     </t>
-
 </templates>

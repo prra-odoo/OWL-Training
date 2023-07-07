@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.oddeven" owl="1">
+        <h5><t t-slot="title"/></h5><br/><br/>
+        <!-- <t t-slot="input"/><br/><br/> -->
+        <t t-slot="default"/><br/><br/>
+        <!-- <t t-debug="pdb"/> -->
+        <button t-on-click="() => props.changeValue()" t-att-disabled="props.player_choose === 'odd'">Odd</button>
+        <button  t-on-click="() => props.changeValue()" t-att-disabled="props.player_choose === 'even'">Even</button>
+
+        <t t-slot="title"/> has choosen <t t-esc="props.player_choose"/>
+        <div class="p-3">
+            Random Number:  <t t-esc="props.ran_number"/>
+        </div>
+
+        <div class="input-group mb-3">
+            <t t-esc="props.player_score" id="score"/>
+            <label class="input-group-text" for="score">Score</label>
+        </div>
+        <button t-on-click="() => props.myFunc1()">Let's Play</button>
+    </t>
+</templates>
