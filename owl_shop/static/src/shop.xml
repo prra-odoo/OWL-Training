@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_shop.shop" owl="1">
+        <div class="p-3">
+            <Header>
+                <t t-set-slot="header">Shop.Com</t>
+            </Header>
+            <ProductList/>
+            <Footer>
+                <t t-set-slot="footer">Footer</t>
+            </Footer>
+        </div>
+    </t>
+
+</templates>

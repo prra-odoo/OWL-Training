@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_shop.productlist" owl="1">
+        <div class="bg-white border">
+            ENTER PRODUCT:<input type="text" placeholder="Enter Products" t-ref="input_name"/>
+            <input type="text" placeholder="Price" t-ref="input_price"/>
+            <button type="button" t-on-click="addProducts">ADD PRODUCT</button>
+            <t t-foreach="productlist" t-as="product" t-key="product.id">
+                <Product id="product.id" product_name="product.product_name" product_price="product.product_price" addcart.bind="addTocart"/>
+            </t>
+        </div>
+        <div class="border border-dark rounded">
+            <p>Product View</p>
+            <t t-foreach="cartlist" t-as="cart" t-key="cart.id">
+                <div class="px-2">
+                    Product: <t t-esc="cart.product_name"/>
+                    <button type="button" class="fa fa-plus" t-on-click="AddQuantity"/>
+                    Quantity: <span t-esc="quntity.quant"/>
+                    <button type="button" class="fa fa-minus" t-on-click="SubQuantity"/> 
+                    Price:<t t-esc="cart.product_price"/>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

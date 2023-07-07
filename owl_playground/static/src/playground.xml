@@ -3,8 +3,18 @@
 
     <t t-name="owl_playground.playground" owl="1">
         <div class="p-3">
-            hello world
+            Hello
         </div>
+        <Counter/>
+        <TodoList/>
+        <Card>
+            <t t-set-slot="title">Card title</t>
+            <t t-set-slot="content">
+                Some quick example text to build on the card title and make up the bulk
+                of the card's content.
+            </t>
+            Footer 
+        </Card>
     </t>
 
 </templates>
