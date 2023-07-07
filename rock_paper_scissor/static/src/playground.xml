@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-
-    <t t-name="owl_playground.playground" owl="1">
-
-    <head>
-        <link rel="stylesheet" type="text/css" href="playground.css"/>
-    </head>
-
+    <t t-name="rock_paper_scissor.playground" owl="1">
+    <div class="column1">
+            Hi there!👋  Welcome to Rock Paper Scissor Game.
+            <Player></Player>
+            <!-- <Result></Result> -->
+    </div>        
+    <!-- <head><link rel="stylesheet" type="text/css" href="playground.css"/></head>
     <div class="container">
         <div class="column1">
             Hi there! Welcome to OWL Playground.
@@ -21,8 +21,6 @@
         <div class="column2">
             <Todolist></Todolist>
         </div>
-    </div>
-
+    </div> -->
     </t>
-
 </templates>

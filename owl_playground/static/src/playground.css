@@ -1,0 +1,27 @@
+*{
+    padding: 10px;
+}
+
+.container {
+    padding: 5px;
+}
+
+.column1 {
+    margin: 10px;
+    border: solid;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+.column2 {
+    margin: 10px;
+    border: solid;
+    border-radius: 20px;
+    padding: 30px;
+    background: #cbbbee;
+
+}
+.card{
+    text-align: center;
+}
+  
