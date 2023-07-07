@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_tshirt.card" owl="1">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <t t-slot="title"/>
+                <!-- <t t-slot="default"/> -->
+                <p><t t-slot="body"/></p>
+            </div>
+        </div>
+    </t> 
+</templates>

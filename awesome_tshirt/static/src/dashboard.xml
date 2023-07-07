@@ -2,7 +2,38 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
-
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <button class="btn btn-primary" t-on-click="openCustomerView"> CUSTOMERS </button>
+                <button class="btn btn-primary" t-on-click="openOrders"> NEW ORDERS </button>
+                <button class="btn btn-primary" t-on-click="cancelledOrders"> CANCELLED ORDERS </button>
+            </t>
+        </Layout>
+    <div class="h-100 o_awesome_tshirt_dashboard">
+        <t t-call="awesome_tshirt.clientaction.statistics"/>
+    </div>
     </t>
+        <t t-name="awesome_tshirt.clientaction.statistics" owl="1">
+            <div class="d-flex flex-nowrap">
+                <div t-foreach="Details" t-as="key" t-key="key" class="m-2">
+                    <Card>
+                        <t t-set-slot="title">
+                            <t t-esc="Details[key]"/>
+                        </t>
+                        <t t-set-slot="body">
+                            <t t-esc="statistics[key]"/>
+                        </t>
+                        <!-- <Piechart/> -->
+                        <!-- <p class="card-text"><t t-esc="statistics[key]"/></p> -->
+                    </Card>
+                </div>
+            </div>
+            <Card>
+                <t t-set-slot="title">Shirt orders by size</t>
+                <t t-set-slot="body">
+                    <PieChart data="statistics['orders_by_size']" label="'Shirt orders by size'" sizeby.bind="openBySizeOrders"/>
+                </t>
+            </Card>
+        </t>
 
 </templates>

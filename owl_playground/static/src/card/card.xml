@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-name="owl_playground.card" owl="1">
+        <div class="card" style="width: 18rem;">
+            <img src="https://img.freepik.com/premium-photo/image-colorful-galaxy-sky-generative-ai_791316-9864.jpg?w=2000" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 class="card-title"><t t-set="title"/></h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk
+                    of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </t>
+</templates>
