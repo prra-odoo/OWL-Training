@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.Draw" owl="1">
+        <div>
+            <div class="d-flex gap-2 position-fixed">
+                <!-- Mouse: X <t t-esc="mouse.x"/>,  Y <t t-esc="mouse.y"/> -->
+                Select Tool: 
+                <div class="gap-1 border">
+                    <input id="line" 
+                        type="radio" 
+                        name="type" 
+                        t-att-checked="state.tool === 'selection'" 
+                        t-on-click="() => this.changeElementTool('selection')"/>
+                    <label for="line">Selection</label>                  
+                </div>
+                <div class="gap-1 border">
+                    <input id="line" 
+                        type="radio" 
+                        name="type" 
+                        t-att-checked="state.tool === 'line'" 
+                        t-on-click="() => this.changeElementTool('line')"/>
+                    <label for="line">Line</label>                  
+                </div>
+                <div class="gap-1 border">
+                    <input id="rectangle" 
+                        type="radio" 
+                        name="type" 
+                        t-att-checked="state.tool === 'rectangle'" 
+                        t-on-click="() => this.changeElementTool('rectangle')"/>
+                    <label for="rectangle">Rectangle</label>                 
+                </div>
+            </div>
+            <canvas t-ref="drawCanvas" class="bg-info" t-on-mousedown="handleMouseDown" t-on-mouseup="handleMouseUp" t-on-mousemove="handleMouseMove"></canvas>
+        </div>
+    </t>
+</templates>

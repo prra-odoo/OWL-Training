@@ -45,6 +45,7 @@
             'web/static/src/core/registry.js',
             'web/static/src/core/assets.js',
             'owl_playground/static/src/**/*',
+            'owl_playground/static/libs/rough.js',
         ],
     }
 }

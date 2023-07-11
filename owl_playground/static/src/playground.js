@@ -4,6 +4,7 @@ import { Component, useState } from "@odoo/owl";
 import { Counter } from "./counter/counter";
 import { TodoList } from "./todo/todo";
 import { Card } from "./card/card";
+import { Draw } from "./draw/draw";
 
 export class Playground extends Component {
     setup() {
@@ -18,7 +19,8 @@ export class Playground extends Component {
             ],
             count: 0,
         });
-        if(localStorage.getItem('todo_list') && localStorage.getItem('todo_list')) {
+        if(
+            localStorage.getItem('todo_list')) {
             this.todo.list = JSON.parse(localStorage.getItem('todo_list'));
             this.todo.count = JSON.parse(localStorage.getItem('todo_count'));
         }
@@ -32,5 +34,5 @@ export class Playground extends Component {
     }
 }
 
-Playground.components = { Counter, TodoList, Card }
+Playground.components = { Counter, TodoList, Card, Draw }
 Playground.template = "owl_playground.playground";
