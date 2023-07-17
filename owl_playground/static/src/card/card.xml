@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t owl="1" t-name="owl_playground.card">
+        <div class="card" style="width: 18rem;">
+            <!-- <img src="" class="card-img-top" alt="CARD IMAGE" /> -->
+            <div class="card-body">
+                <t t-if="props.slots.title">
+                    <h1 class="card-title"><t t-slot="title"/></h1>
+                </t>
+                <div class="card-text">
+                    <t t-slot="default"/>
+                </div>
+                <a href="https://github.com/" class="btn btn-primary">GITHUB DASHBOARD</a>
+            </div>
+        </div>
+    </t>
+</template>

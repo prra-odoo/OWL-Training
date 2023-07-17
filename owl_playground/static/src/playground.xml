@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<templates xml:space="preserve">
-
+<template xml:space="preserve">
     <t t-name="owl_playground.playground" owl="1">
-        <div class="p-3">
-            hello world
-        </div>
+        <Menu/>
+         <!-- <head>
+            <link rel="stylesheet" type="text/css" href="playground.css" />
+        </head>
+        <div class="container">
+             <div class="section-header">Counter Section Header</div> 
+            <div class="counter-section">
+                <Counter/>
+            </div>
+            <div>
+                <Card>
+                    <t t-set-slot="title">ADD CARD</t>
+                    <p class="card-text">This is the demo of the card section </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </Card>
+            </div>
+            <div class="input-section">
+                <Todolist/>
+            </div>
+        </div> -->
+        
     </t>
-
-</templates>
+    
+ </template>

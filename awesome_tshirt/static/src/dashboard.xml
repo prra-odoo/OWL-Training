@@ -2,7 +2,35 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_tshirt.clientaction" owl="1">
-
+        <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+            <t t-set-slot="control-panel-bottom-left">
+            <!-- Hello Owl  -->
+                <button class="btn btn-primary" t-on-click="openSettings"> settings </button>
+                <button class="btn btn-primary" t-on-click="openCustomer"> Customer </button>
+                <button class="btn btn-primary" t-on-click="openNewOrders">New Order </button>
+                <button class="btn btn-primary" t-on-click="openCancelledOrder">cancelled order </button>
+            </t> 
+            
+                
+        </Layout>
+         
+        <t t-call="awesome_tshirt.clientaction.statistics"/>
+        
+    </t>
+    <t t-name="awesome_tshirt.clientaction.statistics" owl="1">
+    <div class="d-flex flex-wrap">
+        <div t-foreach="value" t-as="key" t-key="key" class="m-2">
+            <Card>
+                <t t-set-slot="title"><t t-esc="value[key]"/></t>
+                <p class="card-text"><t t-esc="statistics[key]"/></p>
+                
+            </Card>     
+        </div>
+    
+        <Card>
+            <Piechart/> 
+        </Card>      
+    </div>
     </t>
 
 </templates>
